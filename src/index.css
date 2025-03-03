@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.icon_down_dir::before {
+  content: '' !important;
+}
+.multiselectInput > div:first-of-type {
+  width: 100%;
+}
+.multiSelectContainer input {
+  margin-top: 0 !important;
+}
+.searchBox {
+  width: 100%;
+}
+.multiSelectContainer ul {
+  min-width: 150px;
+}
+.multiSelectContainer input {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.multiSelectContainer li {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.multiSelectContainer li:hover {
+  background: #f5f5f5 !important;
+  color: #000 !important;
+  cursor: pointer;
+}
+.highlightOption {
+  background: #fff !important;
+  color: #000 !important;
+}
+.searchWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.searchWrapper::-webkit-scrollbar {
+  display: none !important;
+}
+.icon_down_dir {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100% !important;
+  justify-content: flex-end !important;
+}
+.chip {
+  position: relative;
+  z-index: 1;
+}
+
+.ReactTags__tags {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0.375rem 7rem 0 0.25rem;
+  width: 100%;
+  height: 37px;
+  overflow: scroll;
+  border-bottom: 1px solid #e5e7eb;
+}
+.ReactTags__tags {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ReactTags__tags::-webkit-scrollbar {
+  display: none !important;
+}
+.ReactTags__tagInputField {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+}
+.ReactTags__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 4px 10px;
+  border-radius: 11px;
+  font-size: 13px;
+  line-height: 19px;
+  white-space: nowrap;
+  background: rgb(245, 245, 245);
+  color: rgb(16, 12, 9);
+}
+.ReactTags__tagInput,
+.ReactTags__tagInputField {
+  width: 100%;
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .disable-body-scroll {
+    overflow-y: hidden;
+  }
+}
+
+.loader-progress {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  left: 0;
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #fabd23;
+  width: 100%;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.loader-progress::before {
+  content: '';
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+textarea {
+  resize: none;
+}
